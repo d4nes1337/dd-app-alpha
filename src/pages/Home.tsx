@@ -49,7 +49,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Three blocks with updated layout */}
-      <section className="grid grid-cols-3 gap-4 mb-8">
+      <section className="grid grid-cols-2 gap-4 mb-8">
         {/* Order Block - takes 1 column but spans 2 rows */}
         <Link 
           to="/shop" 
