@@ -48,37 +48,42 @@ const Home: React.FC = () => {
         <BannerSlider banners={banners} />
       </section>
 
-      {/* Three new blocks */}
-      <section className="grid grid-cols-2 gap-4 mb-8">
-        {/* Order Block */}
-        <Link to="/shop" className="bg-white dark:bg-sidebar-accent/50 rounded-lg p-4 flex justify-between items-center shadow-sm hover-lift">
-          <div className="flex flex-col justify-center h-full">
+      {/* Three blocks with updated layout */}
+      <section className="grid grid-cols-3 gap-4 mb-8">
+        {/* Order Block - takes 1 column but spans 2 rows */}
+        <Link 
+          to="/shop" 
+          className="bg-white dark:bg-sidebar-accent/50 rounded-lg p-4 row-span-2 col-span-1 shadow-sm hover-lift flex flex-col justify-between"
+        >
+          <div></div> {/* Empty div to push content to bottom */}
+          <div className="flex justify-between items-center">
             <h3 className="text-xl font-medium">Заказать</h3>
-          </div>
-          <div className="flex items-center justify-center">
             <ArrowRight size={20} className="text-gray-500 dark:text-gray-400" />
           </div>
         </Link>
 
-        {/* DD Coins Block */}
-        <div className="bg-telegram-blue text-white dark:bg-telegram-blue rounded-lg p-4 shadow-sm hover-lift flex flex-col justify-between">
-          <h3 className="font-medium">DD coin's</h3>
-          <div className="text-4xl font-bold mb-1">5300</div>
-          <p className="text-xs text-white/80">Баланс и реферальная программа</p>
-          <div className="flex justify-end mt-1">
-            <ArrowRight size={20} className="text-white/70" />
-          </div>
-        </div>
-
-        {/* DD Manager Block - spans full width */}
-        <div className="col-span-2 bg-white dark:bg-sidebar-accent/50 rounded-lg p-4 shadow-sm hover-lift">
-          <div className="flex justify-between items-center">
-            <div>
-              <h3 className="font-medium">DD manager</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Поможет определиться с цветом и размером</p>
+        {/* Right column blocks */}
+        <div className="col-span-2 grid grid-rows-2 gap-4">
+          {/* DD Coins Block */}
+          <div className="bg-telegram-blue text-white dark:bg-telegram-blue rounded-lg p-4 shadow-sm hover-lift flex flex-col justify-between">
+            <h3 className="font-medium">DD coin's</h3>
+            <div className="text-4xl font-bold mb-1">5300</div>
+            <p className="text-xs text-white/80">Баланс и реферальная программа</p>
+            <div className="flex justify-end mt-1">
+              <ArrowRight size={20} className="text-white/70" />
             </div>
-            <div className="flex items-center justify-center">
-              <ArrowRight size={20} className="text-gray-500 dark:text-gray-400" />
+          </div>
+
+          {/* DD Manager Block */}
+          <div className="bg-white dark:bg-sidebar-accent/50 rounded-lg p-4 shadow-sm hover-lift">
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-medium">DD manager</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Поможет определиться с цветом и размером</p>
+              </div>
+              <div className="flex items-center justify-center">
+                <ArrowRight size={20} className="text-gray-500 dark:text-gray-400" />
+              </div>
             </div>
           </div>
         </div>
